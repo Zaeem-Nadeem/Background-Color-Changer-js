@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            background-color: aqua;
+        }
+        .navbutton{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+        .navbutton button{
+            text-align: center;
+            height: 30px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbutton">
+            <button class="btn">Red</button>
+            <button class="btn">Blue</button>
+            <button class="btn">Green</button>
+            <button class="btn">Yellow</button>
+            <button class="btn">Brown</button>
+            <button class="btn">Orange</button>
+        </div>
+    </div>
+    <script>
+        const buttons = document.querySelectorAll(".btn");
+        const container = document.querySelector(".container");
+
+        buttons.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                const color = e.target.textContent.toLowerCase();
+                container.style.backgroundColor = color;
+            });
+        });
+    </script>
+</body>
+</html>
